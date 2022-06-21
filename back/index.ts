@@ -9,12 +9,12 @@ import runDatabase from './db';
 
 config({path: './.env'});
 const app: Express = express();
-const PORT = process.env.PORT || 3001; 
+const PORT = 3001; 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(mongoSanitize())
-app.use(cors({origin: ['http://localhost:3000'], methods: ['POST', 'GET']}));
+app.use(cors({origin: '*', methods: ['POST', 'GET']}));
 app.use('/api/user', userApi);
 app.use(helmet()); 
 runDatabase(process.env.DATABASE);
