@@ -6,7 +6,7 @@
         email: '',
         password: ''
     }
-    const Signup = () => axios.post('http://user-backend-test.vercel.app/api/user', form, { 
+    const Signup = () => axios.post('http://localhost:3001/api/user', form, { 
         headers: { 
             "Content-Type": "application/json", 
             "Access-Control-Allow-Origin": true
